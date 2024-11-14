@@ -31,6 +31,10 @@ const qrCodeSchema = new mongoose.Schema(
 
 const QrCode = mongoose.model('QrCode', qrCodeSchema);
 
+app.get('/', (req, res) => {
+  res.json({ message: 'qrcode scanner backend is working!' });
+});
+
 // Routes
 app.post('/api/scan', async (req, res) => {
   try {
